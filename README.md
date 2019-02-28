@@ -1,8 +1,6 @@
 
 ## POCSO: *The Protection of Children from Sexual Offences Act, 2012*
 
-Act Details:
-
 **Long Title**: An Act to protect children from offences of sexual assault, sexual harassment and pornography and provide for establishment of Special Courts for trial of such offences and for matters connected therewith or 
 incidental thereto.
 
