@@ -32,8 +32,13 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 
+<<<<<<< HEAD
 .DS_Store
 
 # Project specific files
 datasets/
 
+=======
+# Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
+rsconnect/
+>>>>>>> e7f899339a5dbe4e821eb7efa13cd560f2332d94
