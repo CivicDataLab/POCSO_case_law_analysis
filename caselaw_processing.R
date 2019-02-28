@@ -4,6 +4,7 @@ library(tidyverse)
 library(progress)
 library(ggmap)
 library(geojsonio)
+library(rvest)
 
 sample_data_dir <- "datasets/Maharashtra/"
 
@@ -15,7 +16,9 @@ pb <- progress::progress_bar$new(total = length(all_files))
 
 
 case_fir_details <- list()
-case_history_list <- 
+case_history_list <- list()
+
+
 for (i in 1:length(all_files)) {
   x <- jsonlite::read_json(all_files[[i]])
 
@@ -131,7 +134,11 @@ case_history_df <- dplyr::bind_rows(case_history_list)
 
 ## Find unique police station across the database and assign unique ID's
 
-police_station_id <- data.frame(police_station = unique(case_fir_df$police_station))
+case_fir_df$police_station <- stringr::str_trim(stringr::str_to_title(case_fir_df$police_station))
+police_station_id <- unique(case_fir_df$police_station)
+police_station_id <- police_station_id[police_station_id != ""]
+police_station_id <- data.frame(police_station = police_station_id)
+
 police_station_id$police_station_id <- 1:nrow(police_station_id)
 
 case_fir_df <- dplyr::left_join(case_fir_df, police_station_id, by="police_station")
@@ -170,3 +177,25 @@ case_fir_df <- dplyr::left_join(case_fir_df, police_station_id[,c(-1)], by='poli
 
 data.table::fwrite(case_fir_df, "datasets/Maharashtra/processed/mh_pocso_01.csv")
 data.table::fwrite(case_history_df, "datasets/Maharashtra/processed/mh_pocso_case_history_02.csv")
+data.table::fwrite(police_station_id, "datasets/Maharashtra/processed/police_station_geo_details.csv")
+
+
+# Exporting data for Mapbox -----------------------------------------------
+case_fir_mapbox <- case_fir_df %>% group_by(district_name, police_station, police_station_id, lon, lat) %>% summarise(total_cases = length(district_name))
+case_fir_mapbox <- case_fir_mapbox[case_fir_mapbox$police_station != "",]
+data.table::fwrite(case_fir_mapbox, "datasets/Maharashtra/processed/case_fir_mapbox.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
