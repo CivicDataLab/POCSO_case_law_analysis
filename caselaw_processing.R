@@ -13,6 +13,7 @@ pb <- progress::progress_bar$new(total = length(all_files))
 
 
 case_fir_details <- list()
+case_history_list <- 
 for (i in 1:length(all_files)) {
   x <- jsonlite::read_json(all_files[[i]])
 
@@ -94,15 +95,34 @@ for (i in 1:length(all_files)) {
       district_name,stringsAsFactors = FALSE, check.names = FALSE
     )
   
+  ## Processing hearing details from cases
+  
+  case_history <- ifelse(is.null(x$historyOfCaseHearing),"",x$historyOfCaseHearing)
+  if(case_history != ""){
+   case_history_table <- case_history %>% read_html() %>% html_table() 
+   case_history_table <- case_history_table[[1]]
+   case_history_table$cino <- cino
+  } else {
+    case_history_table <- data.frame("cino"=cino,"Judge"="", "Business On Date" = "", "Hearing Date" = "",check.names=FALSE)
+  }
+  
+  case_history_list[[i]] <- case_history_table
+  
   # View progress
   pb$tick()
 }
 
+# Transforming case meta variables
 case_fir_df <- dplyr::bind_rows(case_fir_details)
 case_fir_df$police_station <- stringr::str_replace_all(case_fir_df$fir_details, pattern = "\\^", replacement = "")
 case_fir_df$police_station <- stringr::str_replace_all(case_fir_df$police_station, pattern = "[:digit:]+", replacement = "")
 
+#Transforming case history variables
+case_history_df <- dplyr::bind_rows(case_history_list)
+
+# Exporting datasets
 data.table::fwrite(case_fir_df, "datasets/Maharashtra/processed/mh_pocso_01.csv")
+data.table::fwrite(case_history_df, "datasets/Maharashtra/processed/mh_pocso_case_history_02.csv")
 
 
 
