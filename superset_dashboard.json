@@ -1,0 +1,2297 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "dashboard_title": "posco_unicef", 
+                "slug": null, 
+                "json_metadata": "{\"timed_refresh_immune_slices\": [], \"expanded_slices\": {}, \"filter_immune_slice_fields\": {}, \"filter_immune_slices\": [], \"remote_id\": 52, \"default_filters\": \"{}\"}", 
+                "description": null, 
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null, 
+                            "datasource_id": 139, 
+                            "description": null, 
+                            "viz_type": "line", 
+                            "perm": "[main].[posco_unicef](id:139)", 
+                            "datasource_type": "table", 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:57:39"
+                            }, 
+                            "params": "{\"url_params\": {}, \"bottom_margin\": 50, \"x_ticks_layout\": \"flat\", \"y_axis_label\": \"# of cases filed\", \"row_limit\": 10000, \"resample_fillmethod\": null, \"show_brush\": \"auto\", \"line_interpolation\": \"linear\", \"annotation_layers\": [], \"show_legend\": true, \"resample_rule\": null, \"filters\": [], \"database_name\": \"main\", \"granularity_sqla\": \"date_of_filing\", \"rolling_type\": \"None\", \"time_range\": \"2013-02-28T00:00:00 : 2019-02-28T00:00:00\", \"viz_type\": \"line\", \"show_markers\": true, \"order_desc\": true, \"remote_id\": 382, \"rich_tooltip\": true, \"x_axis_label\": \"Time\", \"color_scheme\": \"bnbColors\", \"y_axis_format\": \".3s\", \"schema\": \"posco_unicef\", \"rolling_periods\": \"\", \"y_axis_showminmax\": true, \"x_axis_format\": \"smart_date\", \"metrics\": [\"count\"], \"comparison_type\": \"values\", \"adhoc_filters\": null, \"left_margin\": \"auto\", \"y_axis_bounds\": [null, null], \"timeseries_limit_metric\": null, \"slice_id\": 382, \"resample_how\": null, \"y_log_scale\": false, \"datasource\": \"139__table\", \"x_axis_showminmax\": false, \"datasource_name\": \"posco_unicef\", \"contribution\": false, \"time_grain_sqla\": \"P1M\", \"groupby\": [\"district_name\"]}", 
+                            "changed_by_fk": 47, 
+                            "datasource_name": "posco_unicef", 
+                            "slice_name": "District-wise cases filed", 
+                            "created_by_fk": 47, 
+                            "id": 382, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T18:10:39"
+                            }
+                        }
+                    }, 
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null, 
+                            "datasource_id": 139, 
+                            "description": null, 
+                            "viz_type": "dist_bar", 
+                            "perm": "[main].[posco_unicef](id:139)", 
+                            "datasource_type": "table", 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T17:00:02"
+                            }, 
+                            "params": "{\"url_params\": {}, \"bottom_margin\": \"auto\", \"x_ticks_layout\": \"auto\", \"y_axis_label\": \"\", \"row_limit\": 10000, \"time_range\": \"No filter\", \"reduce_x_ticks\": false, \"show_controls\": false, \"granularity_sqla\": \"date_of_decision\", \"viz_type\": \"dist_bar\", \"remote_id\": 383, \"x_axis_label\": \"\", \"order_bars\": false, \"color_scheme\": \"bnbColors\", \"columns\": [], \"schema\": \"posco_unicef\", \"show_bar_value\": false, \"y_axis_format\": \".3s\", \"metrics\": [\"count\"], \"adhoc_filters\": null, \"slice_id\": 383, \"database_name\": \"main\", \"show_legend\": true, \"datasource\": \"139__table\", \"datasource_name\": \"posco_unicef\", \"contribution\": false, \"time_grain_sqla\": null, \"groupby\": [\"district_name\"], \"bar_stacked\": false}", 
+                            "changed_by_fk": 47, 
+                            "datasource_name": "posco_unicef", 
+                            "slice_name": "District-wise cases registered", 
+                            "created_by_fk": 47, 
+                            "id": 383, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T18:10:39"
+                            }
+                        }
+                    }, 
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null, 
+                            "datasource_id": 139, 
+                            "description": null, 
+                            "viz_type": "filter_box", 
+                            "perm": "[main].[posco_unicef](id:139)", 
+                            "datasource_type": "table", 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T17:01:35"
+                            }, 
+                            "params": "{\"schema\": \"posco_unicef\", \"url_params\": {}, \"slice_id\": 384, \"show_sqla_time_granularity\": false, \"viz_type\": \"filter_box\", \"date_filter\": true, \"remote_id\": 384, \"datasource_name\": \"posco_unicef\", \"time_range\": \"No filter\", \"show_druid_time_origin\": false, \"groupby\": [\"district_name\"], \"adhoc_filters\": null, \"datasource\": \"139__table\", \"show_druid_time_granularity\": false, \"database_name\": \"main\", \"granularity_sqla\": \"date_of_decision\", \"show_sqla_time_column\": false, \"time_grain_sqla\": null, \"metric\": \"count\", \"instant_filtering\": true}", 
+                            "changed_by_fk": 47, 
+                            "datasource_name": "posco_unicef", 
+                            "slice_name": "District filters", 
+                            "created_by_fk": 47, 
+                            "id": 384, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T18:10:39"
+                            }
+                        }
+                    }, 
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null, 
+                            "datasource_id": 139, 
+                            "description": null, 
+                            "viz_type": "table", 
+                            "perm": "[main].[posco_unicef](id:139)", 
+                            "datasource_type": "table", 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T17:08:49"
+                            }, 
+                            "params": "{\"url_params\": {}, \"include_time\": false, \"row_limit\": 10000, \"table_filter\": false, \"time_range\": \"No filter\", \"filters\": [], \"granularity_sqla\": \"date_of_filing\", \"page_length\": 0, \"all_columns\": [], \"viz_type\": \"table\", \"order_desc\": true, \"remote_id\": 385, \"schema\": \"posco_unicef\", \"metrics\": [\"count\"], \"adhoc_filters\": [{\"comparator\": \" \", \"expressionType\": \"SIMPLE\", \"clause\": \"WHERE\", \"fromFormData\": true, \"sqlExpression\": null, \"operator\": \"!=\", \"filterOptionName\": \"filter_cqjswpwzo8h_nxcxr5twg1a\", \"subject\": \"police_station\"}], \"include_search\": false, \"percent_metrics\": [{\"hasCustomLabel\": false, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"label\": \"COUNT_DISTINCT(cino)\", \"column\": {\"optionName\": \"_col_cino\", \"description\": null, \"filterable\": true, \"verbose_name\": null, \"expression\": \"\", \"is_dttm\": false, \"type\": \"TEXT\", \"groupby\": true, \"column_name\": \"cino\"}, \"sqlExpression\": null, \"aggregate\": \"COUNT_DISTINCT\", \"optionName\": \"metric_tlnsp7pazq_tvsscwzagp\"}], \"timeseries_limit_metric\": null, \"slice_id\": 385, \"database_name\": \"main\", \"order_by_cols\": [], \"color_pn\": true, \"align_pn\": false, \"datasource\": \"139__table\", \"table_timestamp_format\": \"%Y-%m-%d %H:%M:%S\", \"datasource_name\": \"posco_unicef\", \"time_grain_sqla\": null, \"groupby\": [\"police_station\"]}", 
+                            "changed_by_fk": 47, 
+                            "datasource_name": "posco_unicef", 
+                            "slice_name": "Cases filed by police station", 
+                            "created_by_fk": 47, 
+                            "id": 385, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T18:10:39"
+                            }
+                        }
+                    }, 
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null, 
+                            "datasource_id": 139, 
+                            "description": null, 
+                            "viz_type": "deck_scatter", 
+                            "perm": "[main].[posco_unicef](id:139)", 
+                            "datasource_type": "table", 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T17:16:37"
+                            }, 
+                            "params": "{\"point_unit\": \"square_m\", \"url_params\": {}, \"row_limit\": 10000, \"granularity\": null, \"schema\": \"posco_unicef\", \"time_range\": \"No filter\", \"granularity_sqla\": \"date_of_filing\", \"js_data_mutator\": \"\", \"viz_type\": \"deck_scatter\", \"remote_id\": 386, \"js_onclick_href\": \"\", \"min_radius\": 2, \"color_scheme\": \"bnbColors\", \"datasource\": \"139__table\", \"js_columns\": [], \"color_picker\": {\"a\": 0.3, \"r\": 135, \"b\": 2, \"g\": 0}, \"multiplier\": 1, \"legend_position\": \"tr\", \"adhoc_filters\": null, \"viewport\": {\"bearing\": 0, \"transitionInterpolator\": {\"propNames\": [\"longitude\", \"latitude\", \"zoom\", \"bearing\", \"pitch\"]}, \"altitude\": 1.5, \"zoom\": 5.723309427751551, \"longitude\": 76.75829989055589, \"height\": 448, \"width\": 825, \"minZoom\": 0, \"maxZoom\": 20, \"transitionInterruption\": 1, \"pitch\": 0, \"latitude\": 18.743251245641282, \"maxPitch\": 60, \"minPitch\": 0, \"transitionDuration\": 0}, \"mapbox_style\": \"mapbox://styles/mapbox/light-v9\", \"max_radius\": 250, \"point_radius_fixed\": {\"type\": \"metric\", \"value\": \"count\"}, \"slice_id\": 386, \"database_name\": \"main\", \"autozoom\": true, \"spatial\": {\"latCol\": \"lat\", \"type\": \"latlong\", \"lonCol\": \"lon\"}, \"datasource_name\": \"posco_unicef\", \"js_tooltip\": \"\", \"time_grain_sqla\": null, \"dimension\": null}", 
+                            "changed_by_fk": 47, 
+                            "datasource_name": "posco_unicef", 
+                            "slice_name": "police station-wise case registration (geo)", 
+                            "created_by_fk": 47, 
+                            "id": 386, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T18:10:39"
+                            }
+                        }
+                    }, 
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null, 
+                            "datasource_id": 139, 
+                            "description": null, 
+                            "viz_type": "dist_bar", 
+                            "perm": "[main].[posco_unicef](id:139)", 
+                            "datasource_type": "table", 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T17:43:21"
+                            }, 
+                            "params": "{\"url_params\": {}, \"bottom_margin\": \"auto\", \"x_ticks_layout\": \"auto\", \"y_axis_label\": \"\", \"row_limit\": 10, \"time_range\": \"No filter\", \"reduce_x_ticks\": false, \"show_controls\": false, \"granularity_sqla\": \"date_of_decision\", \"viz_type\": \"dist_bar\", \"remote_id\": 387, \"x_axis_label\": \"\", \"order_bars\": false, \"color_scheme\": \"bnbColors\", \"columns\": [], \"schema\": \"posco_unicef\", \"show_bar_value\": false, \"y_axis_format\": \".3s\", \"metrics\": [\"count\"], \"adhoc_filters\": null, \"slice_id\": 387, \"database_name\": \"main\", \"show_legend\": true, \"datasource\": \"139__table\", \"datasource_name\": \"posco_unicef\", \"contribution\": false, \"time_grain_sqla\": null, \"groupby\": [\"purpose_name\"], \"bar_stacked\": false}", 
+                            "changed_by_fk": 47, 
+                            "datasource_name": "posco_unicef", 
+                            "slice_name": "case count by purpose name", 
+                            "created_by_fk": 47, 
+                            "id": 387, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T18:10:39"
+                            }
+                        }
+                    }
+                ], 
+                "position_json": "{\n    \"DASHBOARD_CHART_TYPE-4S_jhstAhN\": {\n        \"children\": [],\n        \"id\": \"DASHBOARD_CHART_TYPE-4S_jhstAhN\",\n        \"meta\": {\n            \"chartId\": 387,\n            \"height\": 43,\n            \"sliceName\": \"case count by purpose name\",\n            \"width\": 6\n        },\n        \"type\": \"DASHBOARD_CHART_TYPE\"\n    },\n    \"DASHBOARD_CHART_TYPE-UvVCHugjSM\": {\n        \"children\": [],\n        \"id\": \"DASHBOARD_CHART_TYPE-UvVCHugjSM\",\n        \"meta\": {\n            \"chartId\": 382,\n            \"height\": 37,\n            \"sliceName\": \"District-wise cases filed\",\n            \"width\": 12\n        },\n        \"type\": \"DASHBOARD_CHART_TYPE\"\n    },\n    \"DASHBOARD_CHART_TYPE-_0jxTl_cgw\": {\n        \"children\": [],\n        \"id\": \"DASHBOARD_CHART_TYPE-_0jxTl_cgw\",\n        \"meta\": {\n            \"chartId\": 384,\n            \"height\": 41,\n            \"sliceName\": \"District filters\",\n            \"width\": 3\n        },\n        \"type\": \"DASHBOARD_CHART_TYPE\"\n    },\n    \"DASHBOARD_CHART_TYPE-pskxAU9f5d\": {\n        \"children\": [],\n        \"id\": \"DASHBOARD_CHART_TYPE-pskxAU9f5d\",\n        \"meta\": {\n            \"chartId\": 385,\n            \"height\": 49,\n            \"sliceName\": \"Cases filed by police station\",\n            \"width\": 5\n        },\n        \"type\": \"DASHBOARD_CHART_TYPE\"\n    },\n    \"DASHBOARD_CHART_TYPE-uOlinJn3Aw\": {\n        \"children\": [],\n        \"id\": \"DASHBOARD_CHART_TYPE-uOlinJn3Aw\",\n        \"meta\": {\n            \"chartId\": 386,\n            \"height\": 51,\n            \"sliceName\": \"police station-wise case registration (geo)\",\n            \"width\": 7\n        },\n        \"type\": \"DASHBOARD_CHART_TYPE\"\n    },\n    \"DASHBOARD_CHART_TYPE-wETJ61IAKJ\": {\n        \"children\": [],\n        \"id\": \"DASHBOARD_CHART_TYPE-wETJ61IAKJ\",\n        \"meta\": {\n            \"chartId\": 383,\n            \"height\": 40,\n            \"sliceName\": \"District-wise cases registered\",\n            \"width\": 9\n        },\n        \"type\": \"DASHBOARD_CHART_TYPE\"\n    },\n    \"DASHBOARD_GRID_ID\": {\n        \"children\": [\n            \"DASHBOARD_ROW_TYPE-9W1hVYy-R\",\n            \"DASHBOARD_ROW_TYPE-cdZQHLbZO\",\n            \"DASHBOARD_ROW_TYPE-SUy6F2zBF\",\n            \"DASHBOARD_ROW_TYPE-v-oTUn3W0\"\n        ],\n        \"id\": \"DASHBOARD_GRID_ID\",\n        \"type\": \"DASHBOARD_GRID_TYPE\"\n    },\n    \"DASHBOARD_HEADER_ID\": {\n        \"id\": \"DASHBOARD_HEADER_ID\",\n        \"meta\": {\n            \"text\": \"posco_unicef\"\n        },\n        \"type\": \"DASHBOARD_HEADER_TYPE\"\n    },\n    \"DASHBOARD_ROOT_ID\": {\n        \"children\": [\n            \"DASHBOARD_GRID_ID\"\n        ],\n        \"id\": \"DASHBOARD_ROOT_ID\",\n        \"type\": \"DASHBOARD_ROOT_TYPE\"\n    },\n    \"DASHBOARD_ROW_TYPE-9W1hVYy-R\": {\n        \"children\": [\n            \"DASHBOARD_CHART_TYPE-_0jxTl_cgw\",\n            \"DASHBOARD_CHART_TYPE-wETJ61IAKJ\"\n        ],\n        \"id\": \"DASHBOARD_ROW_TYPE-9W1hVYy-R\",\n        \"meta\": {\n            \"background\": \"BACKGROUND_TRANSPARENT\"\n        },\n        \"type\": \"DASHBOARD_ROW_TYPE\"\n    },\n    \"DASHBOARD_ROW_TYPE-SUy6F2zBF\": {\n        \"children\": [\n            \"DASHBOARD_CHART_TYPE-pskxAU9f5d\",\n            \"DASHBOARD_CHART_TYPE-uOlinJn3Aw\"\n        ],\n        \"id\": \"DASHBOARD_ROW_TYPE-SUy6F2zBF\",\n        \"meta\": {\n            \"background\": \"BACKGROUND_TRANSPARENT\"\n        },\n        \"type\": \"DASHBOARD_ROW_TYPE\"\n    },\n    \"DASHBOARD_ROW_TYPE-cdZQHLbZO\": {\n        \"children\": [\n            \"DASHBOARD_CHART_TYPE-UvVCHugjSM\"\n        ],\n        \"id\": \"DASHBOARD_ROW_TYPE-cdZQHLbZO\",\n        \"meta\": {\n            \"background\": \"BACKGROUND_TRANSPARENT\"\n        },\n        \"type\": \"DASHBOARD_ROW_TYPE\"\n    },\n    \"DASHBOARD_ROW_TYPE-v-oTUn3W0\": {\n        \"children\": [\n            \"DASHBOARD_CHART_TYPE-4S_jhstAhN\"\n        ],\n        \"id\": \"DASHBOARD_ROW_TYPE-v-oTUn3W0\",\n        \"meta\": {\n            \"background\": \"BACKGROUND_TRANSPARENT\"\n        },\n        \"type\": \"DASHBOARD_ROW_TYPE\"\n    },\n    \"DASHBOARD_VERSION_KEY\": \"v2\"\n}", 
+                "created_on": {
+                    "__datetime__": "2019-02-28T16:57:53"
+                }, 
+                "changed_on": {
+                    "__datetime__": "2019-02-28T17:46:57"
+                }, 
+                "changed_by_fk": 47, 
+                "created_by_fk": 47, 
+                "id": 52, 
+                "css": ""
+            }
+        }
+    ], 
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "is_featured": false, 
+                "sql": "", 
+                "main_dttm_col": "date_of_decision", 
+                "created_on": {
+                    "__datetime__": "2019-02-28T16:52:02"
+                }, 
+                "created_by_fk": 47, 
+                "id": 139, 
+                "changed_on": {
+                    "__datetime__": "2019-02-28T16:54:29"
+                }, 
+                "template_params": "", 
+                "cache_timeout": null, 
+                "user_id": 47, 
+                "default_endpoint": "", 
+                "perm": "[main].[posco_unicef](id:139)", 
+                "params": "{\"database_name\": \"main\", \"remote_id\": 139}", 
+                "filter_select_enabled": false, 
+                "changed_by_fk": 47, 
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3129, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:54:20"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "cino", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3130, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:54:17"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "disp_nature", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3131, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:54:24"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "fil_year", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3132, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "jcode", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "FLOAT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3133, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:54:06"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": true, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "date_of_decision", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "DATETIME", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3134, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:54:09"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "reg_year", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3135, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "transfer_est_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3136, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "lower_court_dec_dt", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3137, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:54:00"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "fir_year", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3138, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:58"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "pet_adv", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3139, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:56"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "type_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3140, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "res_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3141, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "petNameAdd", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3142, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "subordinateCourtInfoStr", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3143, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "lower_court_code", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3144, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "res_adv", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3145, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:46"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "petparty_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3146, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:43"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "purpose_next", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3147, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "est_code", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3148, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:37"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "state_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3149, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:34"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": true, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "date_last_list", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "DATETIME", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3150, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "court_no", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3151, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "reg_no", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3152, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "dt_regis", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3153, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:26"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": true, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "date_of_filing", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "DATETIME", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3154, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:23"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "purpose_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3155, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:19"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "fir_no", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "FLOAT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3156, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:15"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "police_st_code", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3157, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:12"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "district_code", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3158, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:09"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "courtno", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "FLOAT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3159, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:07"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "case_no", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "BIGINT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3160, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:08"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "desgname", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3161, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:53:01"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "pet_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3162, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:58"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "resparty_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3163, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:55"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "fir_details", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3164, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:54"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "court_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3165, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:49"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "district_name", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3166, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:45"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "police_station", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3167, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:47"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "police_station_id", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "FLOAT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3168, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:38"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "lon", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "FLOAT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": true, 
+                            "id": 3169, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:39"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": true, 
+                            "is_dttm": false, 
+                            "sum": true, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "lat", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "FLOAT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": true, 
+                            "count_distinct": false
+                        }
+                    }, 
+                    {
+                        "__TableColumn__": {
+                            "python_date_format": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "avg": false, 
+                            "id": 3170, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "created_by_fk": 47, 
+                            "min": false, 
+                            "filterable": false, 
+                            "is_dttm": false, 
+                            "sum": false, 
+                            "database_expression": null, 
+                            "changed_by_fk": 47, 
+                            "verbose_name": null, 
+                            "column_name": "geojson", 
+                            "description": null, 
+                            "max": false, 
+                            "is_active": true, 
+                            "type": "TEXT", 
+                            "table_id": 139, 
+                            "expression": "", 
+                            "groupby": false, 
+                            "count_distinct": false
+                        }
+                    }
+                ], 
+                "schema": "", 
+                "fetch_values_predicate": "", 
+                "description": "", 
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__disp_nature", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(disp_nature)", 
+                            "id": 2132, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__disp_nature", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(disp_nature)", 
+                            "id": 2133, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__fil_year", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(fil_year)", 
+                            "id": 2134, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__fil_year", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(fil_year)", 
+                            "id": 2135, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__jcode", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(jcode)", 
+                            "id": 2136, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__jcode", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(jcode)", 
+                            "id": 2137, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__reg_year", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(reg_year)", 
+                            "id": 2138, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__reg_year", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(reg_year)", 
+                            "id": 2139, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__lower_court_dec_dt", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(lower_court_dec_dt)", 
+                            "id": 2140, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__lower_court_dec_dt", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(lower_court_dec_dt)", 
+                            "id": 2141, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__fir_year", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(fir_year)", 
+                            "id": 2142, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__fir_year", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(fir_year)", 
+                            "id": 2143, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__lower_court_code", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(lower_court_code)", 
+                            "id": 2144, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__lower_court_code", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(lower_court_code)", 
+                            "id": 2145, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__purpose_next", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(purpose_next)", 
+                            "id": 2146, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__purpose_next", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(purpose_next)", 
+                            "id": 2147, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__court_no", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(court_no)", 
+                            "id": 2148, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__court_no", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(court_no)", 
+                            "id": 2149, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__reg_no", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(reg_no)", 
+                            "id": 2150, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__reg_no", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(reg_no)", 
+                            "id": 2151, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__fir_no", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(fir_no)", 
+                            "id": 2152, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__fir_no", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(fir_no)", 
+                            "id": 2153, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__police_st_code", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(police_st_code)", 
+                            "id": 2154, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__police_st_code", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(police_st_code)", 
+                            "id": 2155, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__district_code", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(district_code)", 
+                            "id": 2156, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__district_code", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(district_code)", 
+                            "id": 2157, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__courtno", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(courtno)", 
+                            "id": 2158, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__courtno", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(courtno)", 
+                            "id": 2159, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__case_no", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(case_no)", 
+                            "id": 2160, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__case_no", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(case_no)", 
+                            "id": 2161, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__police_station_id", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(police_station_id)", 
+                            "id": 2162, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__police_station_id", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(police_station_id)", 
+                            "id": 2163, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__lon", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(lon)", 
+                            "id": 2164, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__lon", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(lon)", 
+                            "id": 2165, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "avg__lat", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "avg", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "AVG(lat)", 
+                            "id": 2166, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "sum__lat", 
+                            "d3format": null, 
+                            "verbose_name": null, 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "sum", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "SUM(lat)", 
+                            "id": 2167, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }, 
+                    {
+                        "__SqlMetric__": {
+                            "metric_name": "count", 
+                            "d3format": null, 
+                            "verbose_name": "COUNT(*)", 
+                            "created_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "warning_text": null, 
+                            "table_id": 139, 
+                            "changed_by_fk": 47, 
+                            "metric_type": "count", 
+                            "is_restricted": false, 
+                            "created_by_fk": 47, 
+                            "expression": "COUNT(*)", 
+                            "id": 2168, 
+                            "changed_on": {
+                                "__datetime__": "2019-02-28T16:52:03"
+                            }, 
+                            "description": null
+                        }
+                    }
+                ], 
+                "offset": 0, 
+                "database": {
+                    "__Database__": {
+                        "allow_run_sync": true, 
+                        "allow_ctas": false, 
+                        "allow_multi_schema_metadata_fetch": true, 
+                        "created_on": {
+                            "__datetime__": "2018-07-26T19:58:10"
+                        }, 
+                        "cache_timeout": null, 
+                        "id": 1, 
+                        "changed_on": {
+                            "__datetime__": "2018-07-29T22:10:57"
+                        }, 
+                        "created_by_fk": null, 
+                        "extra": "{\r\n    \"metadata_params\": {},\r\n    \"engine_params\": {}\r\n}\r\n", 
+                        "perm": "[main].(id:1)", 
+                        "allow_csv_upload": true, 
+                        "changed_by_fk": 2, 
+                        "verbose_name": null, 
+                        "expose_in_sqllab": true, 
+                        "allow_dml": false, 
+                        "allow_run_async": true, 
+                        "password": null, 
+                        "select_as_create_table_as": false, 
+                        "database_name": "main", 
+                        "sqlalchemy_uri": "sqlite:////home/ubuntu/.superset/superset.db", 
+                        "impersonate_user": false, 
+                        "force_ctas_schema": ""
+                    }
+                }, 
+                "database_id": 1, 
+                "table_name": "posco_unicef", 
+                "is_sqllab_view": false
+            }
+        }
+    ]
+}
