@@ -1,0 +1,21 @@
+---
+title: "POCSO (The Protection of Children from Sexual Offences Act, 2012) - Judgement Analysis"
+author: "Civic Data Lab"
+output: 
+  html_document:
+    df_print: default
+    number_sections: yes
+    self_contained: no
+    toc: yes
+    toc_depth: 2
+    toc_float:
+      collapsed: no
+---
+
+ -- Objective of the analysis
+ -- Scope
+ -- Case distribution
+
+
+# Number of POCSO cases per year
+
