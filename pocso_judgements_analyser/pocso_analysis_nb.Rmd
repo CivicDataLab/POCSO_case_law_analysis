@@ -57,6 +57,10 @@ Current analysis is a WIP.
 
 **Case Type**: All cases (with and without judgement)
 
+**Total cases**: 4,181
+
+**Total judgements**: 1,326
+
 # When are POCSO cases registered and disposed
 
 Below graphs show a yearly, monthly and a daily trend of POCSO cases as per tee registration dates and the data of decision.
@@ -124,6 +128,8 @@ calendar_heatmap +
 ```
 
 #  Analysis on convictions and acquittals in POCSO cases
+
+> The below analysis is done for reported judgements only. The above plots show that the year 2018 had the maximum number of judgements, but the most reported judgements were from the year 2015
 
 - Several reports around POCSO cases have shown a trend where the victim is often acquitted at the end of the trial. There have been very few convictions in these cases. Let's see if a similar trend is observed when we analysed the **final orders** passed in these judgements
 
