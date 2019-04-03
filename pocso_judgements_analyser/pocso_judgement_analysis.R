@@ -4,6 +4,10 @@ library(tidytext)
 library(dplyr)
 library(ggplot2)
 
+#For NLP - https://github.com/quanteda/spacyr
+library(spacyr)
+spacyr::spacy_initialize()
+
 # For language detection
 library(cld2)
 
@@ -21,6 +25,7 @@ combine_all_judgements <- function(pdf_name){
   print(glue::glue("Processing judgement -> {pdf_name} ... "))
   judgement_text <- pdftools::pdf_text(paste0(pdf_path, pdf_name))
   judgement_text <- sub("[^_]+_([A-Za-z]+)$", "_\\1", judgement_text)
+  judgement$id <- stringr::str_replace_all(pdf_name,pattern = "\\.pdf",replacement = "")
   
   #Cleaning the text
   # if(length(judgement_text) > 1){
@@ -37,30 +42,83 @@ combine_all_judgements <- function(pdf_name){
   read_all_paras <- stringr::str_replace_all(string = read_all_paras,pattern = title_pattern_2, replacement = '') %>% stringr::str_squish()
   read_all_paras <- stringr::str_replace_all(string = read_all_paras,pattern = title_pattern_3, replacement = '') %>% stringr::str_squish()
   judgement$text <- read_all_paras
-  judgement$language <- cld2::detect_language(read_all_paras)
+  judgement_language <- cld2::detect_language(read_all_paras)
   
-  parsing_age <- grep("victim", unlist(strsplit(read_all_paras, split = "\\.")), value=TRUE)
-  if(length(parsing_age) > 0){
-    # remoming pocso details
-    pocso_age_strings <- grep('below age of 18 years',x = parsing_age) %>% unlist()   
-    
-    parsing_age <- parsing_age[!parsing_age %in% parsing_age[pocso_age_strings]]
-    all_age_strings <- stringr::str_extract_all('[:digit:]+ years',string = parsing_age) %>% unlist()   
-    if(length(all_age_strings)>0){
-      victim_age <- all_age_strings[[1]] %>% readr::parse_number()  
+  if(!is.na(judgement_language)){
+    judgement$language <- judgement_language
+    parsing_age <- grep("victim", unlist(strsplit(read_all_paras, split = "\\.")), value=TRUE)
+    if(length(parsing_age) > 0){
+      # remoming pocso details
+      pocso_age_strings <- grep('below age of 18 years',x = parsing_age) %>% unlist()   
+      
+      parsing_age <- parsing_age[!parsing_age %in% parsing_age[pocso_age_strings]]
+      all_age_strings <- stringr::str_extract_all('[:digit:]+ years',string = parsing_age) %>% unlist()   
+      if(length(all_age_strings)>0){
+        victim_age <- all_age_strings[[1]] %>% readr::parse_number()  
+      } else {
+        victim_age <- 0
+      }
     } else {
       victim_age <- 0
     }
+    
     judgement$victim_age <- victim_age
+    judgement$victim_age_bucket <-
+      ifelse(victim_age == 0,
+             NA_character_ ,
+             ifelse(
+               victim_age >= 1 & victim_age < 5,
+               '< 5',
+               ifelse(
+                 victim_age >= 5  & victim_age < 10,
+                 '5-10',
+                 ifelse(
+                   victim_age >= 10  & victim_age < 15,
+                   '10-15',
+                   ifelse(victim_age >= 15  & victim_age <= 18, '15-18', '>18')
+                 )
+               )
+             ))
+    
+    #### Get Order details from judgements
+    parsed_order <- spacyr::spacy_parse(read_all_paras, nounphrase=TRUE)
+    # Get the last instance or order - get statement ID
+    order_statement_id <- max(parsed_order$sentence_id[stringr::str_to_lower(parsed_order$token) == 'order'])
+    
+    # Some judgements have an 'Order' keyword within the order such as:
+    # Copy of the order be sent to the Superintendent,Central Jail 
+    # Taking the previous instance of order in such cases
+    
+    if(c('copy') %in% stringr::str_to_lower(parsed_order$token)){
+      order_statement_id <- parsed_order$sentence_id[stringr::str_to_lower(parsed_order$token) == 'order']  
+      order_statement_id <- order_statement_id[length(order_statement_id) - 1]
+    } 
+    #Get the last statement id
+    last_statement_id <- max(parsed_order$sentence_id)
+    # Get all tokens between the two ID's
+    all_order_tokens <- parsed_order[parsed_order$sentence_id >= order_statement_id & parsed_order$sentence_id <= last_statement_id,]
+    convicted_count <- length(all_order_tokens$token_id[stringr::str_to_lower(all_order_tokens$token) == 'convicted'])
+    acquitted_count <- length(all_order_tokens$token_id[stringr::str_to_lower(all_order_tokens$token) == 'acquitted'])
+    order_verb_adj <- unique(all_order_tokens$token[all_order_tokens$pos %in% c('VERB','ADJ')])
+    judgement_verb_adj <- unique(parsed_order$token[all_order_tokens$pos %in% c('VERB','ADJ')])
+    judgement$convicted_count <- convicted_count
+    judgement$acquitted_count <- acquitted_count
+    judgement$order_verb_adj <- paste0(order_verb_adj,collapse = ",")
+    judgement$judgement_verb_adj <- paste0(judgement_verb_adj,collapse = ",")
   } else {
-    judgement$victim_age <- 0
+    judgement$language <- NA_character_
+    judgement$victim_age <- NA_character_
+    judgement$victim_age_bucket <- NA_character_
+    judgement$convicted_count <- NA_character_
+    judgement$acquitted_count <- NA_character_
+    judgement$order_verb_adj <- NA_character_
+    judgement$judgement_verb_adj <- NA_character_
   }
-  
   return(judgement)
 }
 
-all_judgements <- lapply(list_all_judgements[sample(nrow(all_judgements_df),100)], combine_all_judgements)
-
+# all_judgements <- lapply(list_all_judgements[sample(length(list_all_judgements),20)], combine_all_judgements)
+all_judgements <- lapply(list_all_judgements, combine_all_judgements)
 # check language of judgements
 
 # all_language <- purrr::map(all_judgements,"language") %>% unlist()
@@ -72,6 +130,7 @@ all_judgements_df <- dplyr::bind_rows(all_judgements)
 all_judgements_df <- all_judgements_df %>% mutate(document = row_number())
 all_judgements_df <- all_judgements_df[all_judgements_df$language == "en",]
 all_judgements_df <- left_join(all_judgements_df, judgement_link_db[,c('document', 'judgement_year')])
+# data.table::fwrite(all_judgements_df, "pocso_judgements_analyser/processed_judgements.csv", row.names = FALSE)
 
 # Document wise
 doc_words <- all_judgements_df %>% 
@@ -131,14 +190,7 @@ ggplot(top_15_year, aes(word, tf_idf,fill=judgement_year)) +
   labs(x = NULL, y = "tf_idf") + coord_flip() +
   facet_wrap(~judgement_year, ncol = 3, scales = "free")
   
-
-years <- seq(2014,2019)
-all_words_document <- all_words_document[!is.na(all_words_document$word),]
-words <- all_words_document$word[all_words_document$judgement_year == years[1]] 
-freq <- all_words_document$n[all_words_document$judgement_year == years[1]] 
-
-
-wordcloud::wordcloud(words,freq,min.freq = 1,max.words = 200,scale = c(3,  0.3), random.order = FALSE)
+## QuantEDA - 
 
 
 
@@ -155,21 +207,45 @@ wordcloud::wordcloud(words,freq,min.freq = 1,max.words = 200,scale = c(3,  0.3),
 
 
 
-combine_text <- stringr::str_split(judgement_text,pattern = "\n")
 
-case_df <- combine_text %>% unlist() %>% data.frame(check.names = TRUE) %>% setNames('case_text')
-# x %>% unnest_tokens(input = x1,output = word)
-tidy_case <- case_df %>%
-  unnest_tokens(word, case_text) %>%
-  group_by(word) %>%
-  filter(n() > 10) %>%
-  ungroup()
-
-tidy_case %>%
-  count(word, sort = TRUE) %>%
-  anti_join(get_stopwords()) %>%
-  top_n(50) %>%
-  ungroup() %>%
-  ggplot(aes(reorder_within(word, n, title), n,
-             fill = title
-  ))
+# years <- seq(2014,2019)
+# all_words_document <- all_words_document[!is.na(all_words_document$word),]
+# words <- all_words_document$word[all_words_document$judgement_year == years[1]] 
+# freq <- all_words_document$n[all_words_document$judgement_year == years[1]] 
+# 
+# 
+# wordcloud::wordcloud(words,freq,min.freq = 1,max.words = 200,scale = c(3,  0.3), random.order = FALSE)
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# combine_text <- stringr::str_split(judgement_text,pattern = "\n")
+# 
+# case_df <- combine_text %>% unlist() %>% data.frame(check.names = TRUE) %>% setNames('case_text')
+# # x %>% unnest_tokens(input = x1,output = word)
+# tidy_case <- case_df %>%
+#   unnest_tokens(word, case_text) %>%
+#   group_by(word) %>%
+#   filter(n() > 10) %>%
+#   ungroup()
+# 
+# tidy_case %>%
+#   count(word, sort = TRUE) %>%
+#   anti_join(get_stopwords()) %>%
+#   top_n(50) %>%
+#   ungroup() %>%
+#   ggplot(aes(reorder_within(word, n, title), n,
+#              fill = title
+#   ))

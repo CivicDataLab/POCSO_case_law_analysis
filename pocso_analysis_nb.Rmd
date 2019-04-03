@@ -17,5 +17,109 @@ output:
  -- Case distribution
 
 
-# Number of POCSO cases per year
+# A timeline of POCSO related Cases in Maharashtra 
+
+## Case Distribution
+```{r}
+date_wise_cases <- read_csv("pocso_judgements_analyser/date_wise_cases.csv", 
+col_types = cols(all_dates = col_date(format = "%Y-%m-%d")))
+
+all_details <- read_csv("judgements/all_details.csv", 
+                        col_types = cols(date_of_decision = col_date(format = "%Y-%m-%d"), 
+                        filing_date = col_date(format = "%Y-%m-%d"), 
+                        registration_date = col_date(format = "%Y-%m-%d")), 
+                        na = "empty")
+all_details$judgement_year <- lubridate::year(all_details$date_of_decision)
+all_details$judgement_year[all_details$judgement_flag == 0] <- NA_character_
+judgement_details <- all_details %>% group_by(judgement_year) %>%
+summarise(total_judgements = sum(judgement_flag)) %>% data.frame()
+judgement_details$judgement_year <- as.numeric(judgement_details$judgement_year)
+
+```
+
+```{r plotting yearly cases}
+yearly_cases <- date_wise_cases %>% group_by(year_date) %>% summarise(total_cases_registered = sum(case_registered)) %>% data.frame()
+
+yearly_cases <- left_join(yearly_cases, judgement_details, by=c('year_date'= 'judgement_year'))
+
+yearly_cases <- reshape2::melt(yearly_cases,id.vars = 'year_date')
+
+
+ggplot(yearly_cases, aes(x = year_date, y=value, fill=variable)) +geom_bar (stat = 'identity') + coord_flip() + xlab('Year') + ylab('# registered cases') + ggtitle('Yearly distribution of registered cases and cases with reported judgements',subtitle =  '2013 - 2019 (till March)') 
+
+```
+
+```{r Momth wise trends in registered cases}
+monthly_cases <- date_wise_cases %>% group_by(month_date) %>% summarise(total_cases_registered = sum(case_registered),
+                                      total_cases_decided= sum(case_decided)) %>% data.frame()
+ggplot(monthly_cases, aes(x = month_date, y=total_cases_registered)) +geom_bar (stat = 'identity') + xlab('Year') + ylab('# registered cases') + ggtitle('Month wise trend of case registrations') 
+
+```
+
+```{r Calendar plot of cases registered}
+calendar_heatmap = ggplot_calendar_heatmap(
+   date_wise_cases[date_wise_cases$year_date == 2018,],
+   'all_dates',
+   'case_registered'
+)
+
+# adding some formatting
+calendar_heatmap + 
+   xlab(NULL) + 
+   ylab(NULL) + 
+   scale_fill_continuous(low = 'green', high = 'red')
+```
+
+# Text Analysis of Judgements
+
+```{r Reading processed judgements file}
+all_judgements_text <- data.table::fread("pocso_judgements_analyser/processed_judgements.csv", data.table = FALSE)
+all_judgements_text$convicted_flag <- 'Not convicted'
+all_judgements_text$convicted_flag[all_judgements_text$convicted_count > 0] <- 'Convicted'
+```
+
+## Convictions as per the age of the victim
+```{r}
+ggplot(all_judgements_text, aes(x = victim_age_bucket)) + geom_bar(aes(fill=convicted_flag)) + ggtitle("Convictions as per the age of the victim", subtitle = 'For all cases with a reported judgement') + xlab('Age of the victim') + ylab('# POCSO cases')
+```
+
+## Yearly trends of POCSO cases as per victim's age
+```{r}
+ggplot(all_judgements_text, aes(x = judgement_year)) + geom_bar(aes(fill=victim_age_bucket)) +xlab('Year of Judgement') + ylab('# POCSO cases') + ggtitle('Total # cases with Judgements as per victims age ')
+```
+
+## Yearly convictions
+```{r}
+ggplot(all_judgements_text, aes(x = judgement_year)) + geom_bar(aes(fill=convicted_flag)) + ggtitle("Yearly trend of convictions ", subtitle = 'For all cases with a reported judgement') + xlab('Judgement Year') + ylab('# POCSO cases')
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

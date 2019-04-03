@@ -36,3 +36,22 @@ all_details <- read_csv("judgements/all_details.csv",
                         filing_date = col_date(format = "%Y-%m-%d"), 
                         registration_date = col_date(format = "%Y-%m-%d")), 
                         na = "empty")
+
+registration_df <- all_details %>% group_by(registration_date) %>% summarise(total_cases = length(case_id))
+date_of_decision_df <- all_details %>% group_by(date_of_decision) %>% summarise(total_cases = length(case_id))
+filing_date_df <- all_details %>% group_by(filing_date) %>% summarise(total_cases = length(case_id))
+
+# Generate all dates from 2013 to 2019
+all_dates <- seq.Date(from = as.Date('2013-01-01'),to = as.Date('2019-03-31'),by = 1) %>% data.frame() %>% setNames('all_dates')
+all_dates$year_date <- lubridate::year(all_dates$all_dates)
+all_dates$month_date <- lubridate::month(all_dates$all_dates,label = TRUE)
+
+all_dates <- left_join(all_dates, registration_df, by=c('all_dates' = 'registration_date')) 
+all_dates <- left_join(all_dates, date_of_decision_df, by=c('all_dates' = 'date_of_decision'))
+all_dates <- left_join(all_dates, filing_date_df, by=c('all_dates' = 'filing_date'))
+names(all_dates)[] <- c("all_dates", "year_date", "month_date", "case_registered",
+"case_decided", "case_filed")
+all_dates[is.na(all_dates)] <- 0
+write.csv(all_dates, "pocso_judgements_analyser/date_wise_cases.csv", row.names = FALSE)
+
+
