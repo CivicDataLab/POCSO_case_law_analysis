@@ -28,7 +28,6 @@ knitr::opts_chunk$set(
   message=FALSE,
   warning=FALSE
 )
-
 ```
 
 ***
@@ -70,10 +69,10 @@ library(quanteda)
 ```
 
 ```{r reading input files - case dates, include=FALSE}
-date_wise_cases <- read_csv("pocso_judgements_analyser/date_wise_cases.csv", 
+date_wise_cases <- read_csv("date_wise_cases.csv", 
 col_types = cols(all_dates = col_date(format = "%Y-%m-%d")))
 
-all_details <- read_csv("judgements/all_details.csv", 
+all_details <- read_csv("../judgements/all_details.csv", 
                         col_types = cols(date_of_decision = col_date(format = "%Y-%m-%d"), 
                         filing_date = col_date(format = "%Y-%m-%d"), 
                         registration_date = col_date(format = "%Y-%m-%d")), 
@@ -130,7 +129,7 @@ calendar_heatmap +
 - We will also try to see if there are yearly patterns in convctions and if age of the victim is somehow correlated with the acquittal of the accussed
 
 ```{r Reading processed judgements file, include=FALSE}
-all_judgements_text <- data.table::fread("pocso_judgements_analyser/processed_judgements.csv", data.table = FALSE)
+all_judgements_text <- data.table::fread("processed_judgements.csv", data.table = FALSE)
 all_judgements_text$convicted_flag <- 'Not convicted'
 all_judgements_text$convicted_flag[all_judgements_text$convicted_count > 0] <- 'Convicted'
 ```
