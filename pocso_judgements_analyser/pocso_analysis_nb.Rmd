@@ -52,7 +52,9 @@ Current analysis is a WIP.
 # Scope of the analysis
 
 **Region**: For the purpose of this pilot, we are doing a textual analysis of some judgements from the Thane District of Maharashtra. Here are some numbers 
+
 **Timeline**: 2013 - 2019 (March)
+
 **Case Type**: All cases (with and without judgement)
 
 # When are POCSO cases registered and disposed
@@ -163,7 +165,8 @@ convicted and some are acquitted
   - a single accussed is convicted under some acts and acquitted under other[s]
 
 Let's look at the wordclouds:
-- For All orders
+
+- For all orders
 - For orders where the accused was convicted
 
 ## For all orders
