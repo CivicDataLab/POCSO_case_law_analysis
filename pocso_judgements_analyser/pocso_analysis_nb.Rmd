@@ -103,8 +103,9 @@ ggplot(yearly_cases, aes(x = year_date, y=value, fill=variable)) +geom_bar (stat
 
 ## Monthly Case Distribution
 ```{r Momth wise trends in registered cases, echo=FALSE}
-ggplot(monthly_cases, aes(x = month_date, y=total_cases_registered)) +geom_bar (stat = 'identity') + xlab('Year') + ylab('# registered cases') + ggtitle('Month wise trend of case registrations') + theme_minimal()
-
+monthly_cases$id <- c(4,8,12,2,1,7,6,3,5,11,10,9)
+monthly_cases <- monthly_cases[order(monthly_cases$id),]
+ggplot(monthly_cases, aes(x = reorder(month_date,id), y=total_cases_registered)) +geom_bar (stat = 'identity') + xlab('Year') + ylab('# registered cases') + ggtitle('Month wise trend of case registrations') +  theme_minimal()
 ```
 
 ## Daily distribution of POCSO cases in 2018
