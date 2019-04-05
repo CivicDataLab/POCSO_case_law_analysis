@@ -101,7 +101,7 @@ monthly_cases <- date_wise_cases %>% group_by(month_date) %>% summarise(total_ca
 
 ## Yearly Case Distribution
 ```{r plotting yearly cases, echo=FALSE}
-ggplot(yearly_cases, aes(x = year_date, y=value, fill=variable)) +geom_bar (stat = 'identity') + coord_flip() + xlab('Year') + ylab('# registered cases') + ggtitle('Yearly distribution of registered cases and cases with reported judgements',subtitle =  '2013 - 2019 (till March)') + theme_minimal()
+ggplot(yearly_cases, aes(x = year_date, y=value, fill=variable)) +geom_bar (stat = 'identity') + xlab('Year') + ylab('# registered cases') + ggtitle('Yearly distribution of registered cases and cases with reported judgements',subtitle =  '2013 - 2019 (till March)') + scale_x_continuous(breaks = (unique(yearly_cases$year_date))) + theme_minimal()
 
 ```
 
@@ -147,7 +147,7 @@ all_judgements_text$convicted_flag[all_judgements_text$convicted_count > 0] <- '
 
 ## Yearly convictions
 ```{r Yearly trend of convictions, echo=FALSE, warning=FALSE}
-ggplot(all_judgements_text, aes(x = judgement_year)) + geom_bar(aes(fill=convicted_flag)) + ggtitle("Yearly trend of convictions ", subtitle = 'For all cases with a reported judgement') + xlab('Judgement Year') + ylab('# POCSO cases') + theme_minimal()
+ggplot(all_judgements_text, aes(x = judgement_year)) + geom_bar(aes(fill=convicted_flag)) + ggtitle("Yearly trend of convictions ", subtitle = 'For all cases with a reported judgement') + xlab('Judgement Year') + ylab('# POCSO cases') + scale_x_continuous(breaks = unique(all_judgements_text$judgement_year)) + theme_minimal()
 ```
 
 ## Yearly trends of POCSO judgements as per victim's age
