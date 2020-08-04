@@ -17,6 +17,9 @@ output:
 <link rel="stylesheet" type="text/css" href="include/hideOutput.css">
 <script src="include/hideOutput.js"></script>
 
+The data analysis was part of a feasibility study on POCSO case laws acquired through eCourts. We're now collaborating with HAQ - Centre for Child Rights for a detailed study on the implementation of the POCSO law in the states of Assam, Delhi and Haryana. Read more [here..](https://www.notion.so/Child-Rights-Law-Implementation-Tracker-5ea2d8e7d33c4e2a9b69727a556523d3)
+
+
 <br />Last updated: `r format(Sys.time(), '%d %B, %Y')` (See [changelog](https://github.com/CivicDataLab/POCSO_case_law_analysis/commits/master)).
 
 ```{r Report options, include=FALSE}
@@ -233,7 +236,10 @@ DT::datatable(judgement_kwic,
   )
 ```
 
+
 ***
+
+_Note: This page will not be updated further. The contents on this page are for information purposes only. No claim is made as to the accuracy or currency of the content on this site at any time. Information, data and advice on this website is provided on the basis that site users undertake responsibility for assessing the relevance and accuracy of its content._
 
 [![](CDL_footer.png)](https://civicdatalab.in/)
 
